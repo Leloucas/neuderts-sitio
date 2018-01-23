@@ -1,0 +1,65 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Neuderts</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/neuderts-favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </head>
+  <body>
+    <!-- nav -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#neuNavCollapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="{% static 'img/neuderts-logo.png'%}" alt="Neuderts" class="img-responsive"></a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="neuNavCollapse">
+          <div class="navbar-right">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/">Inicio</a></li>
+              <li><a href="/contacto">Contacto</a></li>
+              <li><a href="{% url 'articles:list' %}">Blog</a></li>
+              <li><a href="https://www.facebook.com/neuderts" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/neudertsmx" target="_blank">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- /nav -->
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <p class="text-center" style="font-weight: normal;font-size: 12px;">
+            Neuderts 2018
+            <span class="pull-right text-right" class="footer-contacto">
+              (+52) 3 10 34 10
+              <br>
+              contacto@neuderts.com
+              <br>
+              Hermosillo, Sonora, México
+            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

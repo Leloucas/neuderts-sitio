@@ -1,0 +1,22 @@
+{% extends 'base_layout.html'%}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="article-detail">
+      <div class="article">
+        <h1 class="article-title">{{ article.title }}</h1>
+        <p class="article-subtitle">{{ article.subtitle }} <span>Creado el {{ article.date|date:"D d M Y" }}</span></p>
+        <hr>
+        <div class="row">
+          <div class="col-md-12 col-sm-8">
+            <img src="{{ article.thumb.url }}" alt="{{ article.title }}" class="img-responsive article-img"/>
+          </div>
+        </div>
+        <hr>
+        <p>{{ article.body|safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
